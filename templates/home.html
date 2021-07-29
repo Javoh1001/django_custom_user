@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+         {% if user.is_authenticated %}
+<!--        <p>Hi {{user.username}}</p>-->
+<!--        <p><a href="{% url 'logout' %}" class="btn btn-danger">Chiqib Ketish</a></p>-->
+        {% else %}
+            <p>You must sign up before </p>
+<!--            <a href="{% url 'login' %}" >Kirish</a> |-->
+<!--            <a href="{% url 'signup' %}" >Ro'yxatdan o'tish</a>-->
+        {% endif %}
+        <div class="jumbotron">
+            <hl class="display-4">Newspaper app</hl>
+            <p class="lead">A Newspaper website built with Django.</p>
+            <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}"
+            role="button">View All Articles</a>
+            </p>
+        </div>
+    </div>
+{% endblock content %}
